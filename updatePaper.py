@@ -13,4 +13,9 @@ buildVersion = str(lastBuild['version'])
 buildNumber = str(lastBuild['build'])
 buildDownload = str(lastBuild['downloads']['application']['name'])
 
-print("https://papermc.io/api/v2/projects/paper/versions/" + buildVersion + "/builds/" + buildNumber + "/downloads/" + buildDownload)
+downloadURL = "https://papermc.io/api/v2/projects/paper/versions/" + buildVersion + "/builds/" + buildNumber + "/downloads/" + buildDownload
+
+r = requests.get(downloadURL)
+
+with open(buildDownload, 'wb') as f:
+    f.write(r.content)
