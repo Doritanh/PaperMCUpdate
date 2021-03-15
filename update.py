@@ -6,7 +6,7 @@ parser = argparse.ArgumentParser(description='Simple downloader script for Paper
 parser.add_argument(
     "-p", "--project", help="Select the project to download latest (paper, waterfall).", default="paper")
 parser.add_argument(
-    "-v", "--version", help="Select the project version (1.16, 1.15...).", default="1.16")
+    "-v", "--version", help="Select the project version (1.16, 1.15...).", default="latest")
 args = parser.parse_args()
 
 baseURL = "https://papermc.io/api/v2/projects/"
