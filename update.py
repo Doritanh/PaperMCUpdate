@@ -2,9 +2,11 @@ import requests
 import json
 
 version = "1.16"
+name = "paper"
 
-r = requests.get("https://papermc.io/api/v2/projects/paper/version_group/" + version + "/builds")
 # r = requests.get("https://papermc.io/api/v2/projects")
+
+r = requests.get("https://papermc.io/api/v2/projects/" + name + "/version_group/" + version + "/builds")
 rJSON = r.json()
 
 lastBuild = rJSON['builds'][-1]
